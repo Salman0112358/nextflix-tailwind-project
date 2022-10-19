@@ -1,16 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+//---------------------Importing Components---------------------------------//
+import {Header} from '../components/index'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      Building a netflix like website
-      {/* Header */}
+      <Header/>
       <main>
         {/* Banner */}
         <section>{/* Row */}</section>
