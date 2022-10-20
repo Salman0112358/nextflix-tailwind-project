@@ -19,7 +19,7 @@ const Home = ({
   documentaryMovies,
 }: Props) => {
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#0a0118] lg:h-[140vh]">
+    <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,7 +27,7 @@ const Home = ({
       <Header />
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
+        <section className=" md:space-y-24">
           <Row  movieData = {trendingMovies} title="Trending Movies"></Row>
           <Row movieData={topRated} title= "Top Rated Movies"></Row>
           <Row movieData={actionMovies} title = " Action Movies"></Row>

@@ -10,7 +10,6 @@ interface PropsBanner {
 }
 
 const Banner = ({ netflixOriginals }: PropsBanner): JSX.Element => {
-  console.log(netflixOriginals);
 
   const [movie, setMovie] = useState<IMovie | null>(null);
 
