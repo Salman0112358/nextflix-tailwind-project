@@ -20,11 +20,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${scorlling && 'bg-#160525'}`}>
+    <header className={`${scorlling && 'bg-[#3f056e]'}`}>
       {/* left div section */}
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
-          src="https://fontmeme.com/permalink/221019/f53a3ebb6987528218621b8cb9ab4017.png"
+          src="https://fontmeme.com/permalink/221020/6a07ca75a3c1b9e24d3b3346fc06771c.png"
           width={100}
           height={100}
           className="cursor-pointer object-contain"

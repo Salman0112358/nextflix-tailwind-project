@@ -6,7 +6,7 @@ import {Header} from '../components/index'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="relative h-[200vh]">
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
