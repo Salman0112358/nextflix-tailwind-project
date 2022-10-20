@@ -1,13 +1,12 @@
-import Image from 'next/image';
+import Image from "next/image";
+import { IMovie } from "../../typescript";
 
-const Banner = () : JSX.Element => {
-
-    return (
-        <div>
-            {/* <Image/> */}
-        </div>
-    )
-
+interface PropsBanner {
+  netflixOriginals: IMovie[];
 }
 
-export default Banner
+const Banner = ({ netflixOriginals }: PropsBanner): JSX.Element => {
+  return <div>{/* <Image/> */}</div>;
+};
+
+export default Banner;

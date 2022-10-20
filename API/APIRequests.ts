@@ -1,5 +1,8 @@
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+import axios from 'axios';
+
+const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
+
 
 // request object that can be indexed for specific request properties 
 const apiRequests = {
@@ -14,11 +17,6 @@ const apiRequests = {
     getDocumentaryMovies :`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=99`
 
 }
-
-
-
-
-
 
 
 export default apiRequests;
