@@ -20,7 +20,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${scorlling && 'bg-[#3f056e]'}`}>
+    <header className={`${scorlling && 'bg-[#3f056e] bg-opacity-50'}`}>
       {/* left div section */}
       <div className="flex items-center space-x-2 md:space-x-10">
         <img

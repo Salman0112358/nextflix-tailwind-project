@@ -30,4 +30,10 @@
     hover:text-[#ac72cf] 
     
     }
+
+    .bannerButton {
+        @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold
+        transition hover:opacity-80 cursor-pointer hover:text-white hover:bg-black
+        md:py-2.5 md:px-8 md:text-xl
+    }
 }

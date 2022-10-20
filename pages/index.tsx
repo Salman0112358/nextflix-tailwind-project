@@ -25,7 +25,7 @@ const Home = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
         <section>{/* Row */}</section>
       </main>
@@ -49,14 +49,14 @@ export const getServerSideProps = async () => {
     animationMovies,
     documentaryMovies,
   ] = await Promise.all([
-    (await axios.get(apiRequests.getTrendingMovies)).data,
-    (await axios.get(apiRequests.getNetflixOriginals)).data,
-    (await axios.get(apiRequests.getTopRated)).data,
-    (await axios.get(apiRequests.getActionMovies)).data,
-    (await axios.get(apiRequests.getScienceFictionMovies)).data,
-    (await axios.get(apiRequests.getFantasyMovies)).data,
-    (await axios.get(apiRequests.getAnimationMovies)).data,
-    (await axios.get(apiRequests.getDocumentaryMovies)).data,
+    (await axios.get(apiRequests.getTrendingMovies)).data.results,
+    (await axios.get(apiRequests.getNetflixOriginals)).data.results,
+    (await axios.get(apiRequests.getTopRated)).data.results,
+    (await axios.get(apiRequests.getActionMovies)).data.results,
+    (await axios.get(apiRequests.getScienceFictionMovies)).data.results,
+    (await axios.get(apiRequests.getFantasyMovies)).data.results,
+    (await axios.get(apiRequests.getAnimationMovies)).data.results,
+    (await axios.get(apiRequests.getDocumentaryMovies)).data.results,
   ]);
 
   return {
