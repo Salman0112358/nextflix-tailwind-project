@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import apiRequests from "../API/APIRequests";
 //---------------------Importing Components---------------------------------//
-import { Banner, Header } from "../components/index";
+import { Banner, Header, Row } from "../components/index";
 import { IMovie, Props } from "../typescript";
 
 
@@ -27,7 +27,15 @@ const Home = ({
       <Header />
       <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section>{/* Row */}</section>
+        <section>
+          <Row  movieData = {trendingMovies} title="Trending Movies"></Row>
+          <Row movieData={topRated} title= "Top Rated Movies"></Row>
+          <Row movieData={actionMovies} title = " Action Movies"></Row>
+          <Row movieData={scienceFictionMovies} title = "Science-Fiction Movies"></Row>
+          <Row movieData={fantasyMovies} title = "Fantasy Movies"></Row>
+          <Row movieData={animationMovies} title = "Animatied Movies"></Row>
+          <Row movieData={documentaryMovies} title = "Documentaries"></Row>
+          </section>
       </main>
       {/* Modal */}
     </div>

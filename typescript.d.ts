@@ -21,7 +21,7 @@ export interface IMovie {
 export interface Props {
   trendingMovies: IMovie[];
   netflixOriginals: IMovie[];
-  topRated: IMovie;
+  topRated: IMovie[];
   actionMovies: IMovie[];
   scienceFictionMovies: IMovie[];
   fantasyMovies : IMovie[];
