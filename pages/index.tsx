@@ -31,7 +31,7 @@ const Home = ({
           <Row  movieData = {trendingMovies} title="Trending Movies"></Row>
           <Row movieData={topRated} title= "Top Rated Movies"></Row>
           <Row movieData={actionMovies} title = " Action Movies"></Row>
-          <Row movieData={scienceFictionMovies} title = "Science-Fiction Movies"></Row>
+          <Row movieData={scienceFictionMovies} title = "Sci-Fi Movies"></Row>
           <Row movieData={fantasyMovies} title = "Fantasy Movies"></Row>
           <Row movieData={animationMovies} title = "Animatied Movies"></Row>
           <Row movieData={documentaryMovies} title = "Documentaries"></Row>
