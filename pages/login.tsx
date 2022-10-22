@@ -64,9 +64,9 @@ const login = () => {
               className="input"
               type="password"
               placeholder="Enter Your Password"
-              {...register("password",{required:true})}
+              {...register("password",{required:true, minLength : 6 , maxLength : 99})}
             />
-            {errors.password && <p className="p-1 text-[15px] font-semibold text-violet-300">You must enter a valid password</p>}
+            {errors.password && <p className="p-1 text-[15px] font-semibold text-violet-300">You must enter a valid password with at least 6 characters</p>}
           </label>
           <button className=" font-semibold w-full rounded-md bg-[#2c023f]" onClick={() => setUserLoggedIn(true)}>
             Sign In
