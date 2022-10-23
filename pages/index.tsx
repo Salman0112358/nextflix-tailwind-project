@@ -4,6 +4,7 @@ import Image from "next/image";
 import apiRequests from "../API/APIRequests";
 //---------------------Importing Components---------------------------------//
 import { Banner, Header, Row } from "../components/index";
+import useAuth from "../hooks/useAuth";
 import { IMovie, Props } from "../typescript";
 
 
@@ -18,6 +19,11 @@ const Home = ({
   animationMovies,
   documentaryMovies,
 }: Props) => {
+
+  const {logout, loading} = useAuth()
+
+  if (loading) return null
+
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
