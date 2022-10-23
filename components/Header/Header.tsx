@@ -1,9 +1,11 @@
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
   const [scorlling, setScrolling] = useState(false);
+  const {logout} = useAuth()
 
   useEffect(() => {
     const handleScrolling = () => {
@@ -42,15 +44,14 @@ const Header = () => {
         <MagnifyingGlassIcon className="hidden sm:inline h-6 w-6 fill-white " />
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6 fill-white" />
-        <Link href="/account">
           <img
             src="https://ih0.redbubble.net/image.618379802.1473/flat,1000x1000,075,f.u2.jpg"
             width={24}
             height={24}
             alt="profile icon"
             className="cursor-pointer rounded"
+            onClick={logout}
           />
-        </Link>
       </div>
     </header>
   );
