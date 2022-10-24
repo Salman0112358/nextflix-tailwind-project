@@ -78,7 +78,7 @@ const login = () => {
             First Time Here?{" "}
             <button type="submit" className="hover:underline font-semibold" onClick={() => setUserLoggedIn(false)}>
               {" "}
-              Make An Account
+              Make A New Account
             </button>
           </div>
         </div>
