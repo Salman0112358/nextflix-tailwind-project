@@ -40,4 +40,9 @@
     focus:bg-[#454545] 
   }
 
+  .modalButton {
+    @apply flex h-11 w-11 items-center justify-center rounded-md border-2 border-[gray]
+    bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10
+  }
+
 }

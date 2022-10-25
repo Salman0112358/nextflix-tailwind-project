@@ -28,3 +28,18 @@ export interface Props {
   animationMovies : IMovie[];
   documentaryMovies : IMovie[];
 }
+
+export interface IElement {
+  type :
+  | 'Bloopers'
+  | 'Featurette'
+  | 'Behind the Scenes'
+  | 'Clip'
+  | 'Trailer'
+  | 'Teaser'
+}
+
+export interface IGenre {
+  id : number,
+  name : string
+}
