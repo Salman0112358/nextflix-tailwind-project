@@ -20,7 +20,8 @@ const Home = ({
   documentaryMovies,
 }: Props) => {
 
-  const {logout, loading} = useAuth()
+  const {logout, loading} = useAuth();
+  // const showModal = useRecoilValue()
 
   if (loading) return null
 
