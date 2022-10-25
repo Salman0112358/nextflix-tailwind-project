@@ -1,7 +1,7 @@
 import MuiModal from "@mui/material/Modal";
 import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../../atoms/modalAtom";
-import { XMarkIcon, PlayIcon, PlusIcon } from "@heroicons/react/24/solid";
+import { XMarkIcon, PlayIcon, PlusIcon, HandThumbUpIcon } from "@heroicons/react/24/solid";
 
 import ReactPlayer from "react-player/lazy";
 import { useEffect, useState } from "react";
@@ -76,6 +76,9 @@ const Modal = () => {
               <button className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white">
                 <PlusIcon className="h-7 w-7" />
                 Add To List
+              </button>
+              <button className="modalButton">
+                <HandThumbUpIcon/>
               </button>
             </div>
           </div>
