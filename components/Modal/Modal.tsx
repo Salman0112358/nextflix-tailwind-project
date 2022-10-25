@@ -82,7 +82,7 @@ const Modal = () => {
                 onClick={() => setPlay((previous) => !previous)}
                 className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white"
               >
-                <PlayIcon className="h-7 w-7 transition hover:text-white " />{" "}
+                <PlayIcon className="h-7 w-7 transition hover:text-white" />{" "}
                 Play
               </button>
               <button className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white">
@@ -106,10 +106,32 @@ const Modal = () => {
           </div>
         </div>
 
-        <div>
-            
-        </div>
 
+        <div className="flex space-x-16 rounded-b-md bg-[#181818] px-10 py-8">
+          <div className="space-y-6 text-lg">
+            <div className="flex items-center space-x-2 text-sm font-semibold ">
+              <p className="text-violet-500">
+                {movie?.vote_average * 10}% Match
+              </p>
+              <p className="font-light">
+                {movie?.release_date || movie?.first_air_date}
+              </p>
+              <div className="flex h-4 tiems-centre justify-center rounded-md border border-white/40 px-1.5 text-xs">
+                HD
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <p className="w-5/6">{movie?.overview}</p>
+              <div className="flex flex-col space-y-3 text-sm ">
+                <div>
+                  <span className="text-violet-400">Genres : </span>
+                  {genres.map((genre) => genre.name).join(", ")}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     </MuiModal>
   );
