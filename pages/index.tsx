@@ -2,8 +2,10 @@ import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import apiRequests from "../API/APIRequests";
+import { modalState } from "../atoms/modalAtom";
+import {useRecoilValue} from 'recoil';
 //---------------------Importing Components---------------------------------//
-import { Banner, Header, Row } from "../components/index";
+import { Banner, Header, Modal, Row } from "../components/index";
 import useAuth from "../hooks/useAuth";
 import { IMovie, Props } from "../typescript";
 
@@ -21,7 +23,7 @@ const Home = ({
 }: Props) => {
 
   const {logout, loading} = useAuth();
-  // const showModal = useRecoilValue()
+  const showModal = useRecoilValue(modalState)
 
   if (loading) return null
 
@@ -44,7 +46,7 @@ const Home = ({
           <Row movieData={documentaryMovies} title = "Documentaries"></Row>
           </section>
       </main>
-      {/* Modal */}
+      {showModal && <Modal/>}
     </div>
   );
 };
