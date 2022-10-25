@@ -2,6 +2,8 @@ import { IMovie } from "../../typescript";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { Thumbnail } from "../index";
 import { useRef, useState } from "react";
+import { useRecoilState } from "recoil";
+import { modalState } from "../../atoms/modalAtom";
 interface RowProps {
   title: string;
   movieData: IMovie[];
@@ -10,6 +12,7 @@ interface RowProps {
 const Row = ({ title, movieData }: RowProps): JSX.Element => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
+  const [showModal, setShowModal] = useRecoilState(modalState);
 
   const handleClick = (direction: string) => {
     setIsMoved(true);
@@ -41,7 +44,7 @@ const Row = ({ title, movieData }: RowProps): JSX.Element => {
           className="flex flex-items-center space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2 scrollbar-hide"
         >
           {movieData.map((movie) => (
-            <Thumbnail key={movie.id} movie={movie} />
+            <Thumbnail key={movie.id} movie={movie} onClick={()=> setShowModal(true)} />
           ))}
         </div>
         <ChevronRightIcon

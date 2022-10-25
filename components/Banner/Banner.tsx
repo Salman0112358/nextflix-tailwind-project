@@ -4,6 +4,8 @@ import { IMovie } from "../../typescript";
 import constants from "../../constants/constants";
 
 import { PlayIcon, InformationCircleIcon } from "@heroicons/react/24/solid";
+import { useRecoilState } from "recoil";
+import { modalState, movieState } from "../../atoms/modalAtom";
 
 interface PropsBanner {
   netflixOriginals: IMovie[];
@@ -12,6 +14,9 @@ interface PropsBanner {
 const Banner = ({ netflixOriginals }: PropsBanner): JSX.Element => {
 
   const [movie, setMovie] = useState<IMovie | null>(null);
+  const [showModal, setShowModal] = useRecoilState(modalState);
+  const [currentMovie, setCurrentMovie] = useRecoilState(movieState)
+
 
   useEffect(() => {
     setMovie(
@@ -40,7 +45,10 @@ const Banner = ({ netflixOriginals }: PropsBanner): JSX.Element => {
         <button className="bannerButton bg-white text-black">
           <PlayIcon className="h-4 w-4 md:h-7 md:w-7" /> Play
         </button>
-        <button className="bannerButton bg-white text-black">
+        <button className="bannerButton bg-white text-black" onClick={()=> {
+          setCurrentMovie(movie)
+          setShowModal(true)
+        }}>
           <InformationCircleIcon className="h-5 w-5  md:h-8 md:w-8" /> More Info
         </button>
       </div>
