@@ -1,7 +1,7 @@
 import MuiModal from "@mui/material/Modal";
 import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../../atoms/modalAtom";
-import { XMarkIcon, PlayIcon } from "@heroicons/react/24/solid";
+import { XMarkIcon, PlayIcon, PlusIcon } from "@heroicons/react/24/solid";
 
 import ReactPlayer from "react-player/lazy";
 import { useEffect, useState } from "react";
@@ -49,7 +49,11 @@ const Modal = () => {
   }, [movie]);
 
   return (
-    <MuiModal open={showModal} onClose={handleClose}>
+    <MuiModal
+      open={showModal}
+      onClose={handleClose}
+      className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
+    >
       <>
         <button className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#18181818 hover:bg-[#50076b]">
           <XMarkIcon onClick={handleClose} className="h-6 w-6" />
@@ -63,12 +67,17 @@ const Modal = () => {
             controls={true}
             muted={muted}
           />
-        </div>
-        <div>
-          <div>
-            <button className="flex items-center gap-x-2 rounded">
-              <PlayIcon className="h-7 w-7 " />
-            </button>
+          <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
+            <div className="flex space-x-2">
+              <button className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white">
+                <PlayIcon className="h-7 w-7 transition hover:text-white " />{" "}
+                Play
+              </button>
+              <button className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white">
+                <PlusIcon className="h-7 w-7" />
+                Add To List
+              </button>
+            </div>
           </div>
         </div>
       </>
