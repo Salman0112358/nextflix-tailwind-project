@@ -1,7 +1,14 @@
 import MuiModal from "@mui/material/Modal";
 import { useRecoilState } from "recoil";
 import { modalState, movieState } from "../../atoms/modalAtom";
-import { XMarkIcon, PlayIcon, PlusIcon, HandThumbUpIcon } from "@heroicons/react/24/solid";
+import {
+  XMarkIcon,
+  PlayIcon,
+  PlusIcon,
+  HandThumbUpIcon,
+  SpeakerWaveIcon,
+  SpeakerXMarkIcon,
+} from "@heroicons/react/24/solid";
 
 import ReactPlayer from "react-player/lazy";
 import { useEffect, useState } from "react";
@@ -13,7 +20,8 @@ const Modal = () => {
   const [movie, setMovie] = useRecoilState(movieState);
   const [trailer, setTrailer] = useState<string>("");
   const [genres, setGenres] = useState<IGenre[]>([]);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const [play, setPlay] = useState(false);
 
   const handleClose = () => {
     setShowModal(false);
@@ -64,12 +72,16 @@ const Modal = () => {
             width="100%"
             height="100%"
             style={{ position: "absolute", top: "0", left: "0" }}
-            controls={true}
+            // controls={true}
             muted={muted}
+            playing={play}
           />
           <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
             <div className="flex space-x-2">
-              <button className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white">
+              <button
+                onClick={() => setPlay((previous) => !previous)}
+                className="flex items-center gap-x-2 rounded-md bg-white px-8 text-xl font-light transition hover:bg-[#000000] text-black hover:text-white"
+              >
                 <PlayIcon className="h-7 w-7 transition hover:text-white " />{" "}
                 Play
               </button>
@@ -78,11 +90,26 @@ const Modal = () => {
                 Add To List
               </button>
               <button className="modalButton">
-                <HandThumbUpIcon/>
+                <HandThumbUpIcon />
               </button>
             </div>
+            <button
+              className="modalButton"
+              onClick={() => setMuted((previous) => !previous)}
+            >
+              {muted ? (
+                <SpeakerXMarkIcon className="h-6 w-6" />
+              ) : (
+                <SpeakerWaveIcon className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
+
+        <div>
+            
+        </div>
+
       </>
     </MuiModal>
   );
